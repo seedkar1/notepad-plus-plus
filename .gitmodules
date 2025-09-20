@@ -1,0 +1,6 @@
+[submodule "nppPluginList"]
+	path = External/nppPluginList
+	url = https://github.com/notepad-plus-plus/nppPluginList.git
+[submodule "updater"]
+	path = External/updater
+	url = https://github.com/notepad-plus-plus/wingup.git
