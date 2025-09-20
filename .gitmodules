@@ -1,0 +1,3 @@
+[submodule "nppPluginList"]
+	path = submodules/nppPluginList
+	url = https://github.com/notepad-plus-plus/nppPluginList.git
