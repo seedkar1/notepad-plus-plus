@@ -88,6 +88,8 @@ copy /Y .\PowerEditor\bin\nppLogNulContentCorruptionIssue.xml .\zipped.package.d
 If ErrorLevel 1 goto End
 copy /Y \PowerEditor\visual.net\x64\Debug\"notepad++.exe" .\zipped.package.debug64\
 If ErrorLevel 1 goto End
+copy /Y \PowerEditor\visual.net\x64\Debug\*.pdb .\zipped.package.debug64\
+If ErrorLevel 1 goto End
 
 
 copy /Y ".\PowerEditor\installer\nativeLang\*.xml" .\zipped.package.debug64\localization\
