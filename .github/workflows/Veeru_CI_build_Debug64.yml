@@ -251,7 +251,7 @@ jobs:
 
     - name: Package Debu64 portable 7z inside atifact
       working-directory: .
-      run: cmd /c ..\..\packageDebug64.bat
+      run: cmd /c packageDebug64.bat
 
     - name: Archive artifacts for x64 / Debug
       if: matrix.build_platform == 'x64' && matrix.build_configuration == 'Debug'
