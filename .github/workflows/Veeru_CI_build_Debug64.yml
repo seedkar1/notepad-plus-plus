@@ -171,9 +171,9 @@ jobs:
     - name: List build output
       working-directory: PowerEditor\visual.net\
       run: |
-           Get-ChildItem -Recurse
-           Get-ChildItem -Recurse -Path ..\bin
-           Get-ChildItem -Recurse -Path ..\bin64
+           Get-ChildItem -Recurse *>&1
+           Get-ChildItem -Recurse -Path ..\bin *>&1
+           Get-ChildItem -Recurse -Path ..\bin64 *>&1
 
     - name: Archive artifacts for x64 / Debug
       if: matrix.build_platform == 'x64' && matrix.build_configuration == 'Debug'
