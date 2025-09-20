@@ -21,5 +21,6 @@ jobs:
     - name: List files
       working-directory: .
       run: |
-           Get-ChildItem -Recurse *>&1
-           cmd /c set
+           Get-ChildItem -Path "C:\Program Files" *>&1
+           Get-ChildItem -Path "C:\Program Files (x86)" *>&1
+           
