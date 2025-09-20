@@ -21,6 +21,6 @@ jobs:
     - name: List files
       working-directory: .
       run: |
-           Get-ChildItem -Path "C:\Program Files" *>&1
-           Get-ChildItem -Path "C:\Program Files (x86)" *>&1
-           
+           Get-ChildItem -Path "C:\Program Files\Microsoft SDKs" *>&1
+           Get-ChildItem -Path "C:\Program Files (x86)\Microsoft SDKs" *>&1
+           Get-ChildItem -Path "C:\Program Files (x86)\Windows Kits" *>&1
