@@ -21,7 +21,5 @@ jobs:
     - name: List files
       working-directory: .
       run: |
-#           Get-ChildItem -Recurse -Path .git/modules *>&1
            Get-ChildItem -Recurse *>&1
-#           Get-Content .git/config
            cmd /c set
