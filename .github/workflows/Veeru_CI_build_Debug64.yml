@@ -166,14 +166,14 @@ jobs:
 
     - name: MSBuild of n++ exe
       working-directory: PowerEditor\visual.net\
-      run: msbuild notepadPlus.sln /m /p:configuration="${{ matrix.build_configuration }}" /p:platform="${{ matrix.build_platform }}" /p:PlatformToolset="v143"
+      run: |
+           msbuild notepadPlus.sln /m /p:configuration="${{ matrix.build_configuration }}" /p:platform="${{ matrix.build_platform }}" /p:PlatformToolset="v143"
+           cmd /c ..\..\packageDebug64.bat
 
     - name: List build output
       working-directory: PowerEditor\visual.net\
       run: |
            Get-ChildItem -Recurse *>&1
-           Get-ChildItem -Recurse -Path ..\bin *>&1
-           Get-ChildItem -Recurse -Path ..\bin64 *>&1
 
     - name: Archive artifacts for x64 / Debug
       if: matrix.build_platform == 'x64' && matrix.build_configuration == 'Debug'
@@ -183,6 +183,7 @@ jobs:
           path: |
                 PowerEditor\visual.net\${{ matrix.build_platform}}\${{ matrix.build_configuration}}\Notepad++.exe
                 PowerEditor\visual.net\${{ matrix.build_platform}}\${{ matrix.build_configuration}}\*.pdb
+                npp.portable.x64.7z
 
 #    - name: Archive artifacts for x64 / Release
 #      if: matrix.build_platform == 'x64' && matrix.build_configuration == 'Release'
